@@ -9,6 +9,7 @@ REGULAR EXPRESSION:
 
 
 
+NOTE: we can mention flags=0 or leave it empty.
 
 Eg1: using match() function
 
@@ -35,9 +36,130 @@ True
 
 
 
-MATCH AND FINDALL:
-------------------
+* MATCH AND FINDALL:
+  ------------------
 
+ match():
+ -------
 
-*syntax :
+ *match() checks characters in pattern with string.
+* Match() checks no.of characters sequence present in pattern sholud match with string,and rest of them are our wish.
+
+ *syntax :
           match(pattern,string,flags)
+  flags :flags specify bitwise operators (0/1).
+
+
+Eg:
+import re
+pattern="apples"
+if re.match(pattern,"apple"):
+    print("True")
+else:
+    print("False")
+
+o/p: False
+
+
+* findall():
+  ----------
+
+*findall :Returns a list containing all matches
+*syntax: findall(pattern,string,flags)
+
+
+Eg:
+import re
+pattern="apple"
+string_1=re.findall("apple",pattern)
+print(string_1)
+string_2=re.findall("app",pattern)
+print(string_2)
+string_3=re.findall("xyz",pattern)
+print(string_3)
+
+o/p:
+['apple']
+['app']
+[]
+
+
+Eg:
+import re
+pattern="apple"
+string_1=re.findall("le",pattern)
+print(string_1)
+
+o/p:
+['le']
+
+Eg:
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
+o/p:
+['ai' 'ai']
+
+
+
+*search:
+ ------
+
+ *The search() function searches the string for a match, and returns a Match object if there is a match.
+ *syntax: search(pattern,string,flags)
+
+
+Eg:
+import re
+pattern="apple"
+if re.search(pattern, "applesapple"):
+    print("True")
+else:
+    print("False")
+o/p:True
+
+
+Eg:
+import re
+pattern="apple"
+if re.search(pattern, "applsapp"):
+    print("True")
+else:
+    print("False")
+
+o/p: False
+
+
+
+
+
+*sub():
+ -----
+
+ *syntax : sub(pattern,replace,string,count,flags)
+
+
+Eg:
+import re
+string="It is a dog"
+pattern="dog"
+print(re.sub(pattern,"cat",string,count=0))
+
+o/p:
+It is a cat
+
+
+
+
+
+*characters and character sequences:
+ ----------------------------------
+
+* ^ : Matches the begining of a line.
+* $ :Matches the end of a line.
+* . :Matches any character.
+* \d :Matches any digit.
+* \D : Matches any non-digit.
+* \s :Matches whitespace.
+* \S :Matches any non-whitespace.
