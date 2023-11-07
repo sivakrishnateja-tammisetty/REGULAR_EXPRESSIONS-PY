@@ -1,6 +1,7 @@
 REGULAR EXPRESSION:
 -------------------
   *Regular expression is also know as regex.
+  * Regular Expression, is a sequence of characters that forms a search pattern.
   *These regular expression is mostly prefered for strings.
   *whenever we use regular expression ,we need to import module( import re).
   *why these regular expression ?
