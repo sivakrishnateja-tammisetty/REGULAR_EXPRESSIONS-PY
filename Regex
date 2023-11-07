@@ -1,0 +1,42 @@
+REGULAR EXPRESSION:
+-------------------
+  *Regular expression is also know as regex.
+  *These regular expression is mostly prefered for strings.
+  *whenever we use regular expression ,we need to import module( import re).
+  *why these regular expression ?
+    These are used to validate input.
+
+
+
+
+Eg1: using match() function
+
+import re
+pattern="siva"
+if re.match(pattern,"siv"):
+    print("True")
+else:
+    print("False")
+
+o/p:
+False
+
+
+import re
+pattern="siva"
+if re.match(pattern,"sivakileeffdmf"):
+    print("True")
+else:
+    print("False")
+
+o/p:
+True
+
+
+
+MATCH AND FINDALL:
+------------------
+
+
+*syntax :
+          match(pattern,string,flags)
