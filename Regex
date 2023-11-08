@@ -275,3 +275,190 @@ print(re.findall(pattern,string))
 
 o/p:
 ['H', 'e', 'l', 'l', 'o', 'h', 'o', 'w', 'a', 'r', 'e', 'y', 'o', 'u', '1', '2', '3']
+
+
+
+CHARACTER AND CHARACTER SQUENCES PART-2:
+----------------------------------------
+
+* * : Repates a character 0 or more times.
+* + : Repeates a character 1 or more times.
+* ( : Indicates where string extraction is to start.
+* ) : Indicates where string extraction is to end.
+* ? : Matches the expression 0 to 1 times
+
+
+
+Eg1:
+import re
+string="From bobby.mark@mail.com"
+pattern="ma*"
+print(re.findall(pattern,string))
+
+o/p:
+['m', 'ma', 'ma', 'm']
+
+
+Eg2:
+
+import re
+string="From bobby.mark@mail.com"
+pattern="ma+"
+print(re.findall(pattern,string))
+
+o/p:
+['ma', 'ma']
+
+Eg3:
+import re
+string="From bobby.mark@mail.com"
+pattern="^F.*?"
+print(re.findall(pattern,string))
+o/p:
+['F']
+
+
+
+Eg4:
+import re
+string="From bobby.mark@mail.com"
+pattern="^From (\S+@\S+)"
+print(re.findall(pattern,string))
+
+o/p:
+['bobby.mark@mail.com']
+
+
+
+
+
+
+CHARACTERS AND CHARACTER SQUENCE 3:
+-----------------------------------
+
+* [] : dont give empty list as pattern.
+* [aeiou] : Matches a single character in a listed set.
+* [^xyz] : It will print all characters present in string except xyz.
+* [a-z 0-9] : set of characters can include a range.
+* {} : It helps us to define no.of characters present
+
+
+
+
+Eg1:
+import re
+string="Python"
+pattern="[]"
+print(re.findall(pattern,string))
+
+o/p:
+error  
+
+
+Eg2:
+import re
+string="Python is a versatile language."
+pattern="[aeiou]"
+print(re.findall(pattern,string))
+
+o/p:
+['o', 'i', 'a', 'e', 'a', 'i', 'e', 'a', 'u', 'a', 'e']
+
+
+import re
+string="Python"
+pattern="[aeiou]"
+print(re.findall(pattern,string))
+o/p: ['o']
+
+
+
+
+Eg3:
+import re
+string="Python"
+pattern="[^o]"
+print(re.findall(pattern,string))
+
+o/p:
+['P', 'y', 't', 'h', 'n']
+
+
+
+
+import re
+string="Python"
+pattern="[^xz]"
+print(re.findall(pattern,string))
+
+o/p:
+['P', 'y', 't', 'h', 'o', 'n']
+
+
+
+
+Eg4:
+import re
+string="python 3.0"
+pattern="[a-z 0-9]"
+print(re.findall(pattern,string))
+
+o/p:
+['p', 'y', 't', 'h', 'o', 'n', ' ', '3', '0']
+
+
+
+
+import re
+string="PyThon 3.0"
+pattern="[A-Z]"
+print(re.findall(pattern,string))
+
+o/p:
+['P','T']
+
+
+
+
+Eg5:
+import re
+string="pythonn"
+pattern="python{2}"
+print(re.findall(pattern,string))
+
+o/p:
+['pythonn']
+
+
+
+
+import re
+string="pythonn"
+pattern="python{1}"
+print(re.findall(pattern,string))
+
+o/p:
+['python']
+
+
+
+
+import re
+string="pythonn"
+pattern="python{0}"
+print(re.findall(pattern,string))
+
+o/p:
+['pytho']
+
+
+
+
+import re
+string="pythonn"
+pattern="python{3}"
+print(re.findall(pattern,string))
+o/p:
+[]          Because ,it was present only 2 n's.
+
+
