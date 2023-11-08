@@ -163,3 +163,115 @@ It is a cat
 * \D : Matches any non-digit.
 * \s :Matches whitespace.
 * \S :Matches any non-whitespace.
+
+
+
+Eg1:
+import re
+string="Hello how r u 123"
+pattern="^H"
+print(re.findall(pattern,string))
+
+o/p: ['H']
+
+
+import re
+string="Hello how r u 123"
+pattern="^e"
+print(re.findall(pattern,string))
+
+o/p: []
+
+
+Eg2:
+import re
+string="Hello how are you"
+pattern="e$"
+print(re.findall(pattern,string))
+
+o/p: []
+
+import re
+string="Hello how are you"
+pattern="u$"
+print(re.findall(pattern,string))
+
+o/p: ['u']
+
+
+
+Eg3:
+import re
+string="Hello how are you"
+pattern="."
+print(re.findall(pattern,string))
+
+o/p:
+['H', 'e', 'l', 'l', 'o', ' ', 'h', 'o', 'w', ' ', 'a', 'r', 'e', ' ', 'y', 'o', 'u']
+
+import re
+string="Hello how are you"
+pattern="^H."
+print(re.findall(pattern,string))
+
+o/p: ['He']
+
+
+import re
+string="Hello how are you"
+pattern="^H.."
+print(re.findall(pattern,string))
+
+o/p: ['Hel']
+
+Eg4:
+import re
+string="Hello how are you 123 45"
+pattern="\d"
+print(re.findall(pattern,string))
+
+o/p:
+['1', '2', '3', '4', '5']
+
+
+import re
+string="Hello how are you"
+pattern="\d"
+print(re.findall(pattern,string))
+
+o/p: []
+
+
+Eg5:
+import re
+string="Hello how are you 12 3"
+pattern="\D"
+print(re.findall(pattern,string))
+
+o/p:
+['H', 'e', 'l', 'l', 'o', ' ', 'h', 'o', 'w', ' ', 'a', 'r', 'e', ' ', 'y', 'o', 'u', ' ', ' ']
+
+
+Eg6:
+import re
+string="Hello how are you 12 3"
+pattern="\s"
+print(re.findall(pattern,string))
+
+o/p: [' ', ' ', ' ', ' ', ' ']
+
+import re
+string="Hellohowareyou123"
+pattern="\s"
+print(re.findall(pattern,string))
+
+o/p: []
+
+Eg7:
+import re
+string="Hello how are you 12 3"
+pattern="\S"
+print(re.findall(pattern,string))
+
+o/p:
+['H', 'e', 'l', 'l', 'o', 'h', 'o', 'w', 'a', 'r', 'e', 'y', 'o', 'u', '1', '2', '3']
